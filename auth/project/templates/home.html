@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+ <div class="column is-4 is-offset-4">
+	<h3 class="title">Health Insurance Cost Prediction</h3>
+    <div class="box">
+
+     <!-- Form to enter new data for predictions  -->
+    <form action="{{ url_for('main.predict')}}"method="POST">
+
+      <div class="field">
+                <div class="control">
+      <input type="text" name="age" placeholder="Age" required="required" /><br>
+       </div>
+            </div>
+
+      <div class="field">
+                <div class="control">
+    	<input type="text" name="sex" placeholder="Sex" required="required" /><br>
+      </div>
+            </div>
+
+      <div class="field">
+                <div class="control">
+        <input type="text" name="bmi" placeholder="BMI" required="required" /><br>
+      </div>
+            </div>
+
+          <div class="field">
+                <div class="control">  
+        <input type="text" name="children" placeholder="Children" required="required" /><br>
+        </div>
+            </div>
+
+        <div class="field">
+                <div class="control">
+        <input type="text" name="smoker" placeholder="Smoker" required="required" /><br>
+        </div>
+            </div>
+
+        <div class="field">
+                <div class="control">
+        <input type="text" name="region" placeholder="Region" required="required" /><br>
+        </div>
+            </div>
+
+
+        <button type="submit" class="button is-block is-info is-large is-fullwidth">Predict</button>
+    </form>
+
+  </div>
+   
+ </div>
+ {{pred}}
+
+{% endblock %}
